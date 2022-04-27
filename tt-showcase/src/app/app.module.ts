@@ -3,12 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import '@tt/input';
 import {ReactiveFormsModule} from "@angular/forms";
-import { TtInputDirective } from './directives/tt-input.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TtInputDirective
   ],
   imports: [
     BrowserModule,

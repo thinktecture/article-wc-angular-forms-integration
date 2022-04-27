@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
     this.form = this.fb.group({
       name: ['Max'],
       lastName: ['Mustermann'],
-      age: ['18'],
+      age: [18],
     })
   }
 }
