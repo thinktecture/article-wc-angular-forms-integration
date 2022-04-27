@@ -14,6 +14,7 @@ export class TtInput extends LitElement {
     :host {
       display: inline-flex;
       justify-content: space-between;
+      gap: 1rem;
       padding: 0.2rem;
       color: var(--tt-input-text-color, #000);
     }
@@ -22,12 +23,24 @@ export class TtInput extends LitElement {
     }
     input {
       border: none;
-      padding: 0;
+      background-color: transparent;
       margin: 0;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 200;
     }
     .input-box {
-      display: flex;
+      display: inline-flex;
       border: 2px solid var(--tt-primary, #ff584f);
+      border-radius: 10px;
+      background-color: var(--tt-input-background-color);
+      padding: 0 0.8rem;
+      min-width: 170px;
+    }
+
+    ::slotted(*) {
+      font-size: 0.8rem;
+      font-weight: 200;
     }
   `;
 
@@ -36,7 +49,7 @@ export class TtInput extends LitElement {
       <label for=${this.id}>${this.label}</label>
       <div class="input-box">
         <input type="text" @input="${this.handleInput}" />
-        <slot name="suffix"></slot>
+        <slot></slot>
       </div>
     `;
   }

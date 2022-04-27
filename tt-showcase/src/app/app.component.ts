@@ -16,7 +16,8 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.form = this.fb.group({
       name: ['Max'],
-      lastName: ['Mustermann']
+      lastName: ['Mustermann'],
+      age: ['18'],
     })
   }
 }
