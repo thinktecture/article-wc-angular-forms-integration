@@ -1,27 +1,57 @@
-import { html, css, LitElement } from 'lit';
-import { property } from 'lit/decorators.js';
+import { css, html, LitElement, PropertyValues } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+import { query } from 'lit-element';
 
+@customElement('tt-input')
 export class TtInput extends LitElement {
+  @property({ type: String }) label = 'Input within shadow DOM:';
+
+  @property() value: string = '';
+
+  @query('input') input!: HTMLInputElement;
+
   static styles = css`
     :host {
       display: block;
-      padding: 25px;
+      padding: 0.2rem;
       color: var(--tt-input-text-color, #000);
+    }
+    input {
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+    .input-box {
+      border: 2px solid var(--tt-border-color, #ff584f);
     }
   `;
 
-  @property({ type: String }) title = 'Hey there';
-
-  @property({ type: Number }) counter = 5;
-
-  __increment() {
-    this.counter += 1;
-  }
-
   render() {
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
+      <label for=${this.id}>${this.label}</label>
+      <div class="input-box">
+        <input type="text" @input="${this.handleInput}" />
+        <slot name="suffix"></slot>
+      </div>
     `;
+  }
+
+  protected firstUpdated(changedProperties: PropertyValues) {
+    super.firstUpdated(changedProperties);
+    this.input.value = this.value;
+  }
+
+  private handleInput() {
+    this.value = this.input.value;
+    this.dispatchValueChange();
+  }
+
+  private dispatchValueChange() {
+    const options = {
+      detail: this.value,
+      bubbles: true,
+      composed: true,
+    };
+    this.dispatchEvent(new CustomEvent('valueChange', options));
   }
 }

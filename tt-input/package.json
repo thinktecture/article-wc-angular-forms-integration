@@ -1,5 +1,5 @@
 {
-  "name": "tt-input",
+  "name": "@tt/input",
   "description": "Webcomponent tt-input following open-wc recommendations",
   "license": "MIT",
   "author": "tt-input",
@@ -19,7 +19,9 @@
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore"
   },
   "dependencies": {
-    "lit": "^2.0.2"
+    "lit": "^2.0.2",
+    "lit-element": "^3.2.0",
+    "lit-html": "^2.2.1"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
