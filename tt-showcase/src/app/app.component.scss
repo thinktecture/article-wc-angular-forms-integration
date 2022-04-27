@@ -1,0 +1,35 @@
+header{
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  background-color: var(--tt-primary);
+  color: white;
+  padding: .5rem;
+}
+
+main{
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+form{
+  width: 40vw;
+  height: fit-content;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+
+  tt-input{
+    width: 50%;
+  }
+}

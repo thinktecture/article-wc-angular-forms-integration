@@ -12,9 +12,13 @@ export class TtInput extends LitElement {
 
   static styles = css`
     :host {
-      display: block;
+      display: inline-flex;
+      justify-content: space-between;
       padding: 0.2rem;
       color: var(--tt-input-text-color, #000);
+    }
+    label {
+      text-align: right;
     }
     input {
       border: none;
@@ -22,7 +26,8 @@ export class TtInput extends LitElement {
       margin: 0;
     }
     .input-box {
-      border: 2px solid var(--tt-border-color, #ff584f);
+      display: flex;
+      border: 2px solid var(--tt-primary, #ff584f);
     }
   `;
 

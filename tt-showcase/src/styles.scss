@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+h1{
+  margin:0;
+  font-size: 1.2rem;
+}
+:root{
+  --tt-primary: #ff584f;
+  --tt-input-text-color: #000;
+}
