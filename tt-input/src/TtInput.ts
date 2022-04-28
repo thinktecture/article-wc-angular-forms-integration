@@ -20,6 +20,15 @@ export class TtInput extends LitElement {
       text-align: right;
     }
 
+    .input-box {
+      display: inline-flex;
+      border: 2px solid var(--tt-primary, #ff584f);
+      border-radius: 10px;
+      background-color: var(--tt-input-background-color);
+      padding: 0 0.8rem;
+      min-width: 170px;
+    }
+
     .input-box ::slotted(input) {
       border: none;
       background-color: transparent;
@@ -37,16 +46,8 @@ export class TtInput extends LitElement {
     }
 
     ::slotted(span) {
+      font-size: 0.8rem;
       order: 3;
-    }
-
-    .input-box {
-      display: inline-flex;
-      border: 2px solid var(--tt-primary, #ff584f);
-      border-radius: 10px;
-      background-color: var(--tt-input-background-color);
-      padding: 0 0.8rem;
-      min-width: 170px;
     }
   `;
 
@@ -54,12 +55,12 @@ export class TtInput extends LitElement {
     return html`
       <slot name="label"></slot>
       <div class="input-box">
-        <slot @slotchange=${this.slotChange}></slot>
+        <slot @slotchange=${this.handleSlotChange}></slot>
       </div>
     `;
   }
 
-  private slotChange(): void {
+  private handleSlotChange(): void {
     const [label] = this.slottedLabel;
     if (label) {
       label.setAttribute('slot', 'label');
