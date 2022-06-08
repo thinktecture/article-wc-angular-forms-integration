@@ -25,5 +25,9 @@ git checkout approach-one
 git checkout approach-two
 ```
 1. After you checked out the branch run `npm i` in each of the projects
-2. Then go to the `tt-showcase` project and run 'npm link ../tt-input' to link both projects
-3. Run `npm start`to serve the Angular application
+2. Go to `tt-input`and run `npm run build`
+3. Then go to the `tt-showcase` project and run 'npm link ../tt-input' to link both projects
+4. Run `npm start`to serve the Angular application
+
+## Notice
+When switching branches make sure to go to `tt-input` and run 'npm run build' again to have a clean `dist`folder.
