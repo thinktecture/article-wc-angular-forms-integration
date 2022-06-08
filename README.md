@@ -10,7 +10,7 @@ The Web Component Project was generated with `npm init @open-wc` from [OpenWC](h
 
 
 ## Setup
----
+
 Each approach from the article is in its own branch. The `main-Branch` just contains the project base structure from scaffolding. 
 
 
