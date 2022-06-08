@@ -28,6 +28,7 @@ export class TtInput extends LitElement {
       border-radius: 10px;
       font-size: 0.8rem;
       font-weight: 200;
+      outline: none;
     }
     .input-box {
       display: inline-flex;
