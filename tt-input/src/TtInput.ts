@@ -1,6 +1,8 @@
-import { html, css, LitElement } from 'lit';
-import { property } from 'lit/decorators.js';
 
+import { css, html, LitElement } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+
+@customElement('tt-input')
 export class TtInput extends LitElement {
   static styles = css`
     :host {
